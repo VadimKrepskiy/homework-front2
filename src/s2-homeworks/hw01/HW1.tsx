@@ -14,17 +14,31 @@ import avatar from './avatar.png'
 * */
 
 // нужно создать правильный тип вместо any
-export type MessageType = any
+export type User = {
+    avatar: string
+    name: string
+}
+
+export type Message = {
+    text: string
+    time: string
+}
+
+export type MessageType = {
+    id: number
+    user: User
+    message: Message
+}
 
 // структуру объекта не менять
 export const message0: MessageType = {
     id: 0,
     user: {
         avatar: avatar, // можно менять
-        name: 'Some Name',  // можно менять
+        name: 'Ivan'//'Some Name',  // можно менять
     },
     message: {
-        text: 'some textsome textsome textsome textsome textsome textsome text', // можно менять
+        text: 'Hello, she didn’t do anything and rested all day, how are you?',//'some textsome textsome textsome textsome textsome textsome text', // можно менять
         time: '22:00', // можно менять
     },
 }
@@ -43,16 +57,18 @@ export const friendMessage0: MessageType = {
 const HW1 = () => {
     return (
         <div id={'hw1'}>
-            <div className={s2.hwTitle}>Homework #1</div>
+            <div className={s2.hwTitle + ' ' + s2.container}>Homework #1</div>
             <div className={s2.hw}>
-                {/*проверка отображения (не менять)*/}
-                <div>
-                    <Message message={message0} />
-                    <FriendMessage message={friendMessage0} />
-                </div>
+                <div className={s2.container}>
+                    {/*проверка отображения (не менять)*/}
+                    <div className={s2.container + ' ' + s2.message_wrap}>
+                        <Message message={message0} />
+                        <FriendMessage message={friendMessage0} />
+                    </div>
 
-                {/*для автоматической проверки дз (не менять)*/}
-                <MessageSender M={Message} />
+                    {/*для автоматической проверки дз (не менять)*/}
+                    <MessageSender M={Message} />
+                </div>
             </div>
         </div>
     )
