@@ -1,6 +1,7 @@
 import React, {FC} from 'react'
 import burgerIcon from './burger.svg'
 import s from './Header.module.css'
+import s2 from '../../../s1-main/App.module.css'
 import {useLocation} from 'react-router-dom'
 import {PATH} from '../Pages'
 
@@ -23,7 +24,7 @@ export const Header: FC<PropsType> = ({handleOpen}) => {
                     : 'Error'
     return (
         <>
-            <div id={'hw5-header'} className={s.header}>
+            <div id={'hw5-header'} className={s.header + ' ' + s2.container}>
                 <img
                     src={burgerIcon}
                     id={'hw5-burger-menu'}
