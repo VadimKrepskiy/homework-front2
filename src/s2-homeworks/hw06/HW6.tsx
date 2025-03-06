@@ -19,28 +19,28 @@ const HW6 = () => {
     }
     const restore = () => {
         // делают студенты
-
+        setValue(restoreState<string>('hw6-editable-span-value', value))
     }
 
     return (
         <div id={'hw6'}>
-            <div className={s2.hwTitle}>Homework #6</div>
+            <div className={s2.hwTitle + ' ' + s2.container}>Homework #6</div>
 
             {/*демонстрация возможностей компоненты:*/}
             <div className={s2.hw}>
-                <div className={s.editableSpanContainer}>
+                <div className={s.editableSpanContainer + ' ' + s2.container}>
                     <SuperEditableSpan
                         id={'hw6-spanable-input'}
                         value={value}
                         onChangeText={setValue}
                         spanProps={{
                             id: 'hw6-editable-span',
-                            defaultText: 'enter text...',
+                            defaultText: 'Enter text...',
                         }}
                     />
                 </div>
 
-                <div className={s.buttonsContainer}>
+                <div className={s.buttonsContainer + ' ' + s2.container}>
                     <SuperButton id={'hw6-save'} onClick={save}>
                         Save to ls
                     </SuperButton>
