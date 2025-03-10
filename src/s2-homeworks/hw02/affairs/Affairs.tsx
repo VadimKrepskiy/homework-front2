@@ -8,7 +8,6 @@ type AffairsPropsType = {
     setFilter: (filter: FilterType) => void
     deleteAffairCallback: (id: number) => void
     filter: FilterType
-    className: string
 }
 
 function Affairs(props: AffairsPropsType) {
@@ -39,7 +38,7 @@ function Affairs(props: AffairsPropsType) {
     ))
 
     return (
-        <div className={props.className}>
+        <div>
             <div className={s.buttonContainer}>
                 <button
                     id={'hw2-button-all'}

@@ -56,10 +56,9 @@ function HW2() {
 
     return (
         <div id={'hw2'}>
-            <div className={s2.hwTitle + ' ' + s2.container}>Homework #2</div>
+            <div className={s2.hwTitle}>Homework #2</div>
             <div className={s2.hw}>
                 <Affairs
-                    className = {s2.container}
                     data={filteredAffairs}
                     setFilter={setFilter}
                     deleteAffairCallback={deleteAffairCallback}

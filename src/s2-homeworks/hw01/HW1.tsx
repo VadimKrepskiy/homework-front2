@@ -57,18 +57,16 @@ export const friendMessage0: MessageType = {
 const HW1 = () => {
     return (
         <div id={'hw1'}>
-            <div className={s2.hwTitle + ' ' + s2.container}>Homework #1</div>
+            <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
-                <div className={s2.container}>
-                    {/*проверка отображения (не менять)*/}
-                    <div className={s2.container + ' ' + s2.message_wrap}>
-                        <Message message={message0} />
-                        <FriendMessage message={friendMessage0} />
-                    </div>
-
-                    {/*для автоматической проверки дз (не менять)*/}
-                    <MessageSender M={Message} />
+                {/*проверка отображения (не менять)*/}
+                <div className={s2.message_wrap}>
+                    <Message message={message0}/>
+                    <FriendMessage message={friendMessage0}/>
                 </div>
+
+                {/*для автоматической проверки дз (не менять)*/}
+                <MessageSender M={Message}/>
             </div>
         </div>
     )

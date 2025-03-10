@@ -5,7 +5,6 @@ import { UserType } from './HW3'
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
     addUserCallback: (name: string) => void // need to fix any
-    className: string
 }
 
 export const pureAddUser = (name: string, setError: (error: string) => void, setName: (name: string) => void, addUserCallback: (name: string) => void) => {
@@ -34,7 +33,6 @@ export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => v
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     users,
     addUserCallback,
-    className
 }) => {
     // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
@@ -70,7 +68,6 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
             error={error}
             totalUsers={totalUsers}
             lastUserName={lastUserName}
-            className={className}
         />
     )
 }
