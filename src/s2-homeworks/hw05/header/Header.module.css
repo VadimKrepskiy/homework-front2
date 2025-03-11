@@ -5,6 +5,7 @@
 .header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 36px;
 }
 
 .header h1 {

@@ -1,4 +1,7 @@
 .container {
     display: flex;
-    gap: 8rem;
+    gap: calc(5% + 20px);
+    @media (width < 400px) {
+        flex-direction: column;
+    }
 }
