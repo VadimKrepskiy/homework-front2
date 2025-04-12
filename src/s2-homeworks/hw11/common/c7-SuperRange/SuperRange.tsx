@@ -7,7 +7,6 @@ const SuperRange: React.FC<SliderProps> = (props) => {
             sx={{ // стили для слайдера // пишет студент
                 maxWidth: 147+'px',
                 '& .MuiSlider-thumb': {
-                    position: 'relative',
                     color: '#00CC22',
                     border: '1px solid #00CC22',
                     backgroundColor: 'white',
@@ -19,10 +18,6 @@ const SuperRange: React.FC<SliderProps> = (props) => {
                         height: '5px',
                         borderRadius: '100%',
                         backgroundColor: '#00CC22',
-                        top: '50%',
-                        left: '50%',
-                        marginRight: '-50%',
-                        transform: 'translate(-50%, -50%)'
                     }
                 },
                 '& .MuiSlider-track': {
