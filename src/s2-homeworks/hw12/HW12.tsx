@@ -4,7 +4,7 @@ import s2 from '../../s1-main/App.module.css'
 import SuperSelect from '../hw07/common/c5-SuperSelect/SuperSelect'
 import {useDispatch, useSelector} from 'react-redux'
 import {changeThemeId, themeReducer} from './bll/themeReducer'
-import store, {AppStoreType} from '../hw10/bll/store'
+import {AppStoreType} from '../hw10/bll/store'
 
 /*
 * 1 - в файле themeReducer.ts написать нужные типы вместо any, дописать редьюсер
@@ -14,9 +14,9 @@ import store, {AppStoreType} from '../hw10/bll/store'
 * */
 
 const themes = [
-    {id: '1', value: 'light'},
-    {id: '2', value: 'blue'},
-    {id: '3', value: 'dark'},
+    {id: 1, value: 'light'},
+    {id: 2, value: 'blue'},
+    {id: 3, value: 'dark'},
 ]
 
 const HW12 = () => {
@@ -24,9 +24,9 @@ const HW12 = () => {
 
     const dispatch = useDispatch()
 
-    const themeId = useSelector<AppStoreType, string>(state=>state.theme.themeId)
+    const themeId = useSelector<AppStoreType, number>(state=>state.theme.themeId)
 
-    const change = (id: string) => { // дописать функцию
+    const change = (id: number) => { // дописать функцию
         dispatch(changeThemeId(id))
     }
 
