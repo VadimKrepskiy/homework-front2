@@ -1,7 +1,16 @@
 .tech {
-
+    line-height: 24px;
+    font-size: 16px;
 }
 
 .loading {
+    text-align: end;
+    max-width: 100%;
+    width: 468px;
+    margin: 0;
+}
 
+.input {
+    width: 468px !important;
+    max-width: 100%;
 }
