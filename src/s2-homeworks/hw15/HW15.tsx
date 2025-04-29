@@ -5,6 +5,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import {Loader} from '../hw10/Loader';
 
 /*
 * 1 - дописать SuperPagination
@@ -52,7 +53,11 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
+                if(res){
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                }
+                setLoading(false)
                 // сохранить пришедшие данные
 
                 //
@@ -62,11 +67,9 @@ const HW15 = () => {
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
-        // setPage(
-        // setCount(
-
-        // sendQuery(
-        // setSearchParams(
+        setPage(newPage)
+        setCount(newCount)
+        sendQuery({page: newPage, count: newCount, sort: sort})
 
         //
     }
@@ -74,10 +77,10 @@ const HW15 = () => {
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        // sendQuery(
+        sendQuery({page: 1, count: count, sort: newSort})
         // setSearchParams(
 
         //
@@ -107,7 +110,9 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                {idLoading && <div id={'hw15-loading'} className={s.loading}>
+                    <Loader/>
+                </div>}
 
                 <SuperPagination
                     page={page}
